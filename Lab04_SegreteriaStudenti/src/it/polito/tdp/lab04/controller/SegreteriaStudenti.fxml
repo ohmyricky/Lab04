@@ -1,14 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 
-<BorderPane prefHeight="442.0" prefWidth="561.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polito.tdp.lab04.controller.SegreteriaStudentiController">
+<BorderPane prefHeight="442.0" prefWidth="561.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polito.tdp.lab04.controller.SegreteriaStudentiController">
    <top>
       <Label text="Lab3_Segreteria Studenti" BorderPane.alignment="CENTER">
          <BorderPane.margin>
             <Insets bottom="20.0" top="10.0" />
          </BorderPane.margin></Label>
    </top>
+   <center>
+      <VBox prefHeight="200.0" prefWidth="100.0" spacing="18.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox spacing="25.0">
+               <children>
+                  <Label text="Corso:">
+                     <padding>
+                        <Insets left="15.0" />
+                     </padding>
+                  </Label>
+                  <ComboBox fx:id="CorsiSwitch" prefHeight="25.0" prefWidth="270.0" promptText="Corsi" />
+               </children>
+            </HBox>
+            <Button fx:id="btnCercaIscritti" mnemonicParsing="false" onAction="#doCercaIscritti" prefHeight="25.0" prefWidth="132.0" text="Cerca iscritti corsi">
+               <VBox.margin>
+                  <Insets left="15.0" />
+               </VBox.margin>
+            </Button>
+            <HBox spacing="10.0">
+               <children>
+                  <Label text="Studente:">
+                     <padding>
+                        <Insets left="15.0" />
+                     </padding>
+                  </Label>
+                  <TextField fx:id="txtMatricola" prefHeight="43.0" prefWidth="91.0" />
+                  <Button fx:id="btnCheck" mnemonicParsing="false" onAction="#doControllaMatricola" text="Button" />
+                  <TextField fx:id="txtNome" editable="false" prefHeight="25.0" prefWidth="108.0" />
+                  <TextField fx:id="txtCognome" editable="false" prefHeight="25.0" prefWidth="128.0" />
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0" spacing="370.0">
+               <children>
+                  <Button fx:id="btnCercaCorsi" mnemonicParsing="false" onAction="#doCercaCorsi" text="Cerca corsi" />
+                  <Button fx:id="btnIscrivi" mnemonicParsing="false" onAction="#doIscrivi" prefHeight="25.0" prefWidth="71.0" text="Iscrivi" />
+               </children>
+               <padding>
+                  <Insets left="15.0" />
+               </padding>
+            </HBox>
+            <TextField fx:id="txtResult" prefHeight="265.0" prefWidth="531.0">
+               <VBox.margin>
+                  <Insets left="15.0" right="15.0" />
+               </VBox.margin>
+            </TextField>
+            <Button fx:id="btnReset" mnemonicParsing="false" onAction="#doReset" prefHeight="25.0" prefWidth="66.0" text="Reset">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="470.0" right="20.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+      </VBox>
+   </center>
 </BorderPane>
